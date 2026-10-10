@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 node_modules/
 
 .env.local
+=======
+# Object file
+*.o
+
+# Ada Library Information
+*.ali
+>>>>>>> 8d5b2322a43dcbd9dbbbaf7e990ed5a18f801bb7
