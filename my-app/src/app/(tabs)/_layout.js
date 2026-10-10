@@ -1,82 +1,51 @@
 import React from 'react';
-import { Tabs } from "expo-router";
+import { Tabs } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { SystemBars } from "react-native-edge-to-edge";
-import { useColorScheme } from 'react-native';
+import useTheme from '../../store/useTheme';
 
-
-import colors from '../../utils/colors'; 
-
-
-import { 
-  useFonts, 
-  Syne_400Regular, 
-  Syne_500Medium, 
-  Syne_600SemiBold, 
-  Syne_700Bold, 
-  Syne_800ExtraBold 
-} from '@expo-google-fonts/syne';
-
-export default function Layout() {
-  const [fontsLoaded] = useFonts({
-    Syne_400Regular, 
-    Syne_500Medium, 
-    Syne_600SemiBold, 
-    Syne_700Bold, 
-    Syne_800ExtraBold
-  });
-  
-  // Prevent rendering before custom fonts are loaded
-  if (!fontsLoaded) {
-    return null;
-  }
+export default function TabsLayout() {
+  const theme = useTheme() || {};
+  const colors = theme.colors || {};
 
   return (
-    <>
-      <SystemBars style="auto" />
-      <Tabs
-        screenOptions={{
-          tabBarActiveTintColor: colors?.accentPrimary || '#007AFF',
-          tabBarInactiveTintColor: colors?.textMuted || '#8E8E93',
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: colors.accentPrimary || '#007AFF',
+        tabBarInactiveTintColor: colors.textSecondary || '#8E8E93',
+        tabBarStyle: {
+          backgroundColor: colors.cardBackground || '#FFFFFF',
+          borderTopColor: colors.border || '#E5E5EA',
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
         }}
-      >
-        <Tabs.Screen
-          name="Home"
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={focused ? 'home' : 'home-outline'} size={24} color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="Departments"
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={focused ? 'easel' : 'easel-outline'} size={24} color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="Details"
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={focused ? 'document-text' : 'document-text-outline'} size={24} color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="Setting"
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={focused ? 'settings' : 'settings-outline'} size={24} color={color} />
-            ),
-          }}
-        />
-      </Tabs>
-    </>
+      />
+      <Tabs.Screen
+        name="department"
+        options={{
+          title: 'Departments',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="grid-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="setting"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings-outline" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }

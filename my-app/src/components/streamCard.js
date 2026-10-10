@@ -22,10 +22,10 @@ const StreamCards = () => {
       </Text>
 
       <View style={styles.cardRow}>
-        {/* Natural Science Card */}
+        
         <TouchableOpacity
           style={[styles.card, { backgroundColor: '#EFF6FF', borderColor: '#3B82F6' }]}
-          activeOpacity={0.8}
+        
           onPress={() => navigateToDepartments('natural', 'Natural Science')}
         >
           <View style={[styles.iconWrapper, { backgroundColor: '#3B82F6' }]}>
@@ -35,7 +35,7 @@ const StreamCards = () => {
           <Text style={styles.cardSubtitle}>Engineering, IT, Medicine & Tech</Text>
         </TouchableOpacity>
 
-        {/* Social Science Card */}
+        
         <TouchableOpacity
           style={[styles.card, { backgroundColor: '#FDF2F8', borderColor: '#EC4899' }]}
           activeOpacity={0.8}

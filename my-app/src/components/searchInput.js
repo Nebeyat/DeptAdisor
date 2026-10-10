@@ -27,7 +27,7 @@ const SearchInput = ({ value, onChangeText, placeholder = 'Search...' }) => {
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor={colors?.textSecondary || '#94A3B8'}
+        placeholderTextColor={colors.textSecondary || '#94A3B8'}
         style={[
           styles.input,
           {

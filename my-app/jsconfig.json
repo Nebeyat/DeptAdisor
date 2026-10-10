@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@convex/*": ["../convex/*"]
+      }
+    },
+    "exclude": ["node_modules"]
+  }

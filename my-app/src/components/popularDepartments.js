@@ -5,11 +5,11 @@ import Icon from './icon';
 import useTheme from '../store/useTheme';
 
 const POPULAR_DEPARTMENTS = [
-  { id: '1', name: 'Software Engineering', code: 'SE', stream: 'natural', rating: '4.9' },
-  { id: '2', name: 'Medicine', code: 'MED', stream: 'natural', rating: '4.8' },
-  { id: '3', name: 'Accounting & Finance', code: 'A&F', stream: 'social', rating: '4.7' },
-  { id: '4', name: 'Civil Engineering', code: 'CE', stream: 'natural', rating: '4.7' },
-  { id: '5', name: 'Law', code: 'LAW', stream: 'social', rating: '4.6' },
+  { id: '1', name: 'Software Engineering', code: 'SE', stream: 'natural', rating: '> 3.7' },
+  { id: '2', name: 'Medicine', code: 'MED', stream: 'natural', rating: '> 3.8' },
+  { id: '3', name: 'Accounting & Finance', code: 'A&F', stream: 'social', rating: '> 3.5' },
+  { id: '4', name: 'Civil Engineering', code: 'CE', stream: 'natural', rating: '> 2.8' },
+  { id: '5', name: 'Law', code: 'LAW', stream: 'social', rating: '> 3.6' },
 ];
 
 const PopularDepartments = () => {

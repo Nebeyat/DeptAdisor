@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -9,13 +9,22 @@ import TopUniversities from '../../components/topUniversty';
 import useTheme from '../../store/useTheme';
 
 const Home = () => {
-  const [searchText, setSearchText] = useState('');
   const { colors } = useTheme();
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: colors?.background || '#F8FAFC' }]}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
-        <HeroCard searchText={searchText} setSearchText={setSearchText} />
+    <SafeAreaView 
+      style={[
+        styles.container, 
+        { backgroundColor: colors.background }
+      ]}
+      edges={['top', 'left', 'right']}
+    >
+      <ScrollView 
+        showsVerticalScrollIndicator={false} 
+        contentContainerStyle={styles.scrollContent}
+        keyboardShouldPersistTaps="handled"
+      >
+        <HeroCard />
         <StreamCards />
         <PopularDepartments />
         <TopUniversities />
@@ -25,8 +34,12 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
-  scrollContent: { paddingBottom: 32 },
+  container: { 
+    flex: 1 
+  },
+  scrollContent: { 
+    paddingBottom: 80, 
+  },
 });
 
 export default Home;
