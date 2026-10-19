@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 node_modules/
 
+/keystore.properties
+
 .env.local
 =======
 # Object file

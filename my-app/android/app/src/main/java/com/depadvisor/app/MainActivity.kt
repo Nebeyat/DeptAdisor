@@ -1,4 +1,4 @@
-package com.anonymous.myapp
+package com.depadvisor.app
 
 import android.os.Build
 import android.os.Bundle
