@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1 
   },
   scrollContent: { 
-    paddingBottom: 80, 
+    paddingBottom: 25, // Reduced from 80 to remove the empty space at the bottom
   },
 });
 

@@ -8,6 +8,9 @@ const UNIVERSITIES = [
   { id: '2', name: 'Bahir Dar University', location: 'Bahir Dar', code: 'BDU', icon: 'school-outline' },
   { id: '3', name: 'Hawassa University', location: 'Hawassa', code: 'HU', icon: 'school-outline' },
   { id: '4', name: 'Jimma University', location: 'Jimma', code: 'JU', icon: 'school-outline' },
+  { id: '5', name: 'Gonder University', location: 'Gonder', code: 'GU', icon: 'school-outline' },
+  { id: '6', name: 'Adama Science and Technology University', location: 'Adama', code: 'ASTU', icon: 'school-outline' },
+  { id: '7', name: 'Arba Minch University', location: 'Arba Minch', code: 'AMU', icon: 'school-outline' },
 ];
 
 const TopUniversities = () => {

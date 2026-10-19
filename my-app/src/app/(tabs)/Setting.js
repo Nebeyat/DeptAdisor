@@ -27,6 +27,10 @@ export default function SettingScreen() {
   const languages = ['English', 'Amharic', 'Oromiffa', 'Tigrigna'];
 
   // Handlers for settings items
+  const handleOpenAdmin = () => {
+    router.push('/admin');
+  };
+
   const handleAbout = () => {
     Alert.alert(
       'About Dept Advisor',
@@ -99,6 +103,17 @@ export default function SettingScreen() {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         {/* Settings Group */}
         <View style={styles.cardGroup}>
+          {/* Admin Panel Button */}
+          <TouchableOpacity style={styles.settingItem} activeOpacity={0.7} onPress={handleOpenAdmin}>
+            <View style={styles.leftContent}>
+              <Ionicons name="shield-checkmark-outline" size={22} color="#1D4ED8" />
+              <Text style={[styles.settingLabel, { color: '#1D4ED8' }]}>Admin Panel</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={18} color="#1D4ED8" />
+          </TouchableOpacity>
+
+          <View style={styles.divider} />
+
           {/* Dark Mode */}
           <View style={styles.settingItem}>
             <View style={styles.leftContent}>

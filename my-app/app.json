@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "my-app",
+    "name": "DeptAdvisor",
     "slug": "my-app",
     "scheme": "myapp",
     "version": "1.0.0",
@@ -21,7 +21,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
       "package": "com.anonymous.myapp"
     },
     "web": {
@@ -43,7 +42,15 @@
         }
       ],
       "expo-font",
-      "expo-status-bar"
+      "expo-status-bar",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "androidSdk": "classic"
+        }
+      ]
     ]
   }
 }
