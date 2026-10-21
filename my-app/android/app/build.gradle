@@ -81,12 +81,6 @@ def enableMinifyInReleaseBuilds = (findProperty('android.enableMinifyInReleaseBu
  */
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
-def uploadKeyProperties = new Properties()
-def uploadKeyPropertiesFile = rootProject.file('../../keystore.properties')
-if (uploadKeyPropertiesFile.exists()) {
-    uploadKeyPropertiesFile.withInputStream { uploadKeyProperties.load(it) }
-}
-
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -111,10 +105,12 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('my-upload-key.jks')
-            storePassword uploadKeyProperties['storePassword']
-            keyAlias 'my-upload-key'
-            keyPassword uploadKeyProperties['keyPassword']
+            // Caution! In production, you need to generate your own keystore file.
+            // see https://reactnative.dev/docs/signed-apk-android.
+            storeFile file('deptadvisor-key.keystore')
+            storePassword '021530'
+            keyAlias 'deptadvisor-key-alias'
+            keyPassword '021530'
         }
     }
     buildTypes {
@@ -122,10 +118,12 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
+            // Caution! In production, you need to generate your own keystore file.
+            // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.release
             def enableShrinkResources = findProperty('android.enableShrinkResourcesInReleaseBuilds') ?: 'false'
             shrinkResources enableShrinkResources.toBoolean()
-            minifyEnabled true
+            minifyEnabled enableMinifyInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             def enablePngCrunchInRelease = findProperty('android.enablePngCrunchInReleaseBuilds') ?: 'true'
             crunchPngs enablePngCrunchInRelease.toBoolean()
