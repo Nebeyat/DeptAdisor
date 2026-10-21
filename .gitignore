@@ -1,13 +1,44 @@
-<<<<<<< HEAD
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
 node_modules/
 
-/keystore.properties
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
 
-.env.local
-=======
-# Object file
-*.o
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
 
-# Ada Library Information
-*.ali
->>>>>>> 8d5b2322a43dcbd9dbbbaf7e990ed5a18f801bb7
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+/android/.gradle
+/android/app/build
+/android/.kotlin
+

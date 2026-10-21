@@ -4,18 +4,17 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import useTheme from '../../store/useTheme';
 
 export default function TabsLayout() {
-  const theme = useTheme() || {};
-  const colors = theme.colors || {};
+  const { colors } = useTheme();
 
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.accentPrimary || '#007AFF',
-        tabBarInactiveTintColor: colors.textSecondary || '#8E8E93',
+        tabBarActiveTintColor: colors?.accentPrimary || '#007AFF',
+        tabBarInactiveTintColor: colors?.textSecondary || '#8E8E93',
         tabBarStyle: {
-          backgroundColor: colors.cardBackground || '#FFFFFF',
-          borderTopColor: colors.border || '#E5E5EA',
+          backgroundColor: colors?.background || '#FFFFFF',
+          borderTopColor: colors?.border || '#E5E5EA',
         },
       }}
     >
